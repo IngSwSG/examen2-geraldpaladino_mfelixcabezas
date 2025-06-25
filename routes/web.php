@@ -8,3 +8,5 @@ Route::get('/', function () {
 });
 
 Route::post('/materiales', [App\Http\Controllers\MaterialController::class, 'store']);
+Route::post('/material/{id}/actualizar', [App\Http\Controllers\MaterialController::class, 'update']);
+Route::get('/materiales/lista', [App\Http\Controllers\MaterialController::class, 'index']);
