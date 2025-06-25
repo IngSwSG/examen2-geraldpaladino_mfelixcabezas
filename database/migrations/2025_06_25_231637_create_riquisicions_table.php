@@ -11,16 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('materials', function (Blueprint $table) {
+        Schema::create('riquisicions', function (Blueprint $table) {
             $table->id();
-            $table->string('unidadMedida');
-            $table->string('descripcion');
-            $table->string('ubicacion');
-
-            // FK: Relación con categoría
-          $table->foreignId('categoria_id')->constrained('categorias')->onDelete('cascade');
-
-
+            $table->dateTime('fecha');
+            $table->string('estado');
+            $table->foreignId('usuario_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -30,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('materials');
+        Schema::dropIfExists('riquisicions');
     }
 };

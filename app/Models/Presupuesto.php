@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Presupuesto extends Model
+{
+        protected $fillable = ['codigoPresupuesto', 'nombrePresupuesto'];
+
+    public function materialesUnidades()
+    {
+        return $this->hasMany(MaterialUnidad::class);
+    }
+}
