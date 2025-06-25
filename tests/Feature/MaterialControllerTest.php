@@ -11,7 +11,7 @@ class MaterialControllerTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function dadoUnMaterialQueNoExiste_insertarMaterialfuncionaCorrectamente()
+    public function test_dadoUnMaterialQueNoExiste_insertarMaterialfuncionaCorrectamente()
     {
         // Crear una categoría para asociar el material
         $categoria = Categoria::factory()->create();
@@ -21,7 +21,7 @@ class MaterialControllerTest extends TestCase
             'unidadMedida' => 'kg',
             'descripcion' => 'Material de prueba',
             'ubicacion' => 'Almacen 1',
-            'idCategoria' => $categoria->id,
+            'categoria_id' => $categoria->id,
         ];
 
         // Ejecutar la petición POST
@@ -35,7 +35,7 @@ class MaterialControllerTest extends TestCase
             'unidadMedida' => 'kg',
             'descripcion' => 'Material de prueba',
             'ubicacion' => 'Almacen 1',
-            'idCategoria' => $categoria->id,
+            'categoria_id' => $categoria->id,
         ]);
     }
 }

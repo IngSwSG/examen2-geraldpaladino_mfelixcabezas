@@ -17,7 +17,7 @@ class Categoria extends Model
 
     public function materiales()
     {
-        return $this->hasMany(Material::class, 'idCategoria');
+        return $this->hasMany(Material::class);
     }
 }
 

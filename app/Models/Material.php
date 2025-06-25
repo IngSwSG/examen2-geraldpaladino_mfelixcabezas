@@ -14,21 +14,21 @@ class Material extends Model
         'unidadMedida',
         'descripcion',
         'ubicacion',
-        'idCategoria',
+        'categoria_id',
     ];
 
     public function categoria()
     {
-        return $this->belongsTo(Categoria::class, 'idCategoria');
+        return $this->belongsTo(Categoria::class);
     }
 
     public function materialUnidades()
     {
-        return $this->hasMany(MaterialUnidad::class, 'codigo');
+        return $this->hasMany(MaterialUnidad::class);
     }
 
     public function itemsRequisicion()
     {
-        return $this->hasMany(ItemRequisicion::class, 'codigo');
+        return $this->hasMany(ItemRequisicion::class);
     }
 }

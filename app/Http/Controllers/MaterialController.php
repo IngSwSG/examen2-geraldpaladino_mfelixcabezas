@@ -13,7 +13,7 @@ class MaterialController extends Controller
             'unidadMedida' => 'required|string',
             'descripcion' => 'required|string',
             'ubicacion' => 'required|string',
-            'idCategoria' => 'required|exists:categorias,id',
+            'categoria_id' => 'required|exists:categorias,id',
         ]);
 
         $material = Material::create($validated);

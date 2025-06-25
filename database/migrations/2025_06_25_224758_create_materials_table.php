@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('ubicacion');
 
             // FK: Relación con categoría
-            $table->unsignedBigInteger('idCategoria');
-            $table->foreign('idCategoria')->references('idCategoria')->on('categorias');
+          $table->foreignId('categoria_id')->constrained('categorias')->onDelete('cascade');
+        
         
             $table->timestamps();
         });
