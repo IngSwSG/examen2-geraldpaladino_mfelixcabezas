@@ -16,11 +16,11 @@ return new class extends Migration
             $table->string('unidadMedida');
             $table->string('descripcion');
             $table->string('ubicacion');
+
+            // FK: Relación con categoría
             $table->unsignedBigInteger('idCategoria');
             $table->foreign('idCategoria')->references('idCategoria')->on('categorias');
         
-
-
             $table->timestamps();
         });
     }
